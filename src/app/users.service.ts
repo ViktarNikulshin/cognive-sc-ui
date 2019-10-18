@@ -1,13 +1,15 @@
+
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {map} from 'rxjs/operators';
+
+@Injectable()
 export class UsersService {
-  users = [
-    { name: 'viktar',
-      password: '1111'
-    },
-    { name: 'roman',
-      password: 'qwer'
-    },
-    { name: 'admin',
-      password: 'admin'
-    },
-  ];
+
+  constructor(private http: HttpClient) {
+  }
+
+  getUsers() {
+    return this.http.get('https://randomuser.me/api/?inc=gender,name,picture,location&results=8&nat=gb');
+  }
 }
