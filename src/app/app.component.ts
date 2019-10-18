@@ -8,15 +8,5 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'cognive-sc-ui';
-  users = [
-    { name: 'viktar',
-      password: '1111'
-    },
-    { name: 'roman',
-      password: 'qwer'
-    },
-    { name: 'admin',
-      password: 'admin'
-    },
-  ];
+  users = [];
 }

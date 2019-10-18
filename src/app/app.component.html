@@ -16,8 +16,11 @@
 <div class="content" role="main">
 
 
-  <app-login></app-login>
-
+  <!--  <app-login></app-login>-->
+  <app-user
+    *ngFor="let u of users"
+    [user]="u"
+  ></app-user>
 </div>
 
 <!-- Footer -->
