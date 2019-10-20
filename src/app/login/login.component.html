@@ -1,28 +1,23 @@
-<div class="container">
-  <div class="row">
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
 
-    <div class="col-md-offset-3 col-md-6">
-      <form class="form-horizontal">
-        <span class="heading">АВТОРИЗАЦИЯ</span>
-        <div class="form-group">
-          <input type="email" class="form-control" id="inputEmail" placeholder="Login">
-          <i class="fa fa-user"></i>
-        </div>
-        <div class="form-group help">
-          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-          <i class="fa fa-lock"></i>
-          <a href="#" class="fa fa-question-circle"></a>
-        </div>
-        <div class="form-group">
-          <div class="main-checkbox">
-            <input type="checkbox" value="none" id="checkbox1" name="check"/>
-            <label for="checkbox1"></label>
-          </div>
-          <span class="text">Запомнить</span>
-          <button type="submit" class="btn btn-default">ВХОД</button>
-        </div>
-      </form>
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
     </div>
 
-  </div><!-- /.row -->
-</div><!-- /.container -->
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
