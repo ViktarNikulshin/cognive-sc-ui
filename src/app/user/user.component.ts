@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {UsersService} from '../users.service';
 
 @Component({
   selector: 'app-user',
@@ -7,5 +8,12 @@ import {Component, Input} from '@angular/core';
 })
 
 export class UserComponent {
-  @Input() user;
+
+  @Input() users;
+  user
+  constructor() {}
+  setUser(user) {
+    this.user = user;
+  }
+
 }

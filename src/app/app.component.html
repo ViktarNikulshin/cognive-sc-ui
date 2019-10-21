@@ -3,11 +3,20 @@
   <div class="container blue">
     <div class="row">
       <div class="col-sm">
-        <h2>Service Center</h2>
+        <h2>Service</h2>
       </div>
       <div class="col-sm">
-
-        <button type="button" class="btn btn-secondary btn-sm login float-right">Login</button>
+        <a routerLink="/">
+          <button type="button" class="btn btn-secondary btn-sm login float-right">Home</button>
+        </a>
+      </div>
+      <div class="col-sm">
+        <button type="button" class="btn btn-secondary btn-sm login float-right">User</button>
+      </div>
+      <div class="col-sm">
+        <a routerLink="/login">
+          <button type="button" class="btn btn-secondary btn-sm login float-right">Login</button>
+        </a>
       </div>
     </div>
 
@@ -15,13 +24,9 @@
 </div>
 <!--Main-->
 <div class="content" role="main">
-
-    <app-login></app-login>
-<!--  <app-user-->
-<!--    *ngFor="let u of users"-->
-<!--    [user]="u"-->
-<!--  ></app-user>-->
+  <router-outlet></router-outlet>
 </div>
+
 
 <!-- Footer -->
 <footer class="page-footer font-small blue">
