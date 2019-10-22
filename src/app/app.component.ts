@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {UsersService} from './users.service';
-
+export interface User {
+  id: number;
+}
 
 @Component({
   selector: 'app-root',
