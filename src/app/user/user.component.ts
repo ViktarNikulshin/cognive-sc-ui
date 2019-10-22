@@ -10,10 +10,6 @@ import {UsersService} from '../users.service';
 export class UserComponent {
 
   @Input() users;
-  user
   constructor() {}
-  setUser(user) {
-    this.user = user;
-  }
 
 }
