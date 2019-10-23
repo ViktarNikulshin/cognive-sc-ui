@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UsersService} from '../users.service';
-import {User} from '../app.component';
+
 @Component({
   selector: 'home-app',
   templateUrl: './home.component.html',
@@ -8,7 +8,7 @@ import {User} from '../app.component';
   providers: [UsersService]
 })
   export class HomeComponent implements OnInit{
-  users: User[] = [];
+  users;
   searchStr = '';
   size;
 

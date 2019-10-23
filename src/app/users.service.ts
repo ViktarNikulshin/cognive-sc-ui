@@ -1,8 +1,6 @@
 
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {User} from './app.component';
-import {map} from 'rxjs/operators';
 
 @Injectable()
 export class UsersService {
@@ -13,6 +11,6 @@ export class UsersService {
   }
 
   getUsers() {
-    this.http.get('https://randomuser.me/api/?inc=gender,name,picture,location&results=' + this.size + '&nat=gb').pipe(map(response => {return this.users}));
+   return  this.http.get('https://viktornikulshin.outsystemscloud.com/BD/rest/v1/users');
   }
 }
