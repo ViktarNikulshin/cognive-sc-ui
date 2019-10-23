@@ -3,25 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {UserComponent} from './user/user.component';
 import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {SearchPipe} from './search.pipe';
 import {RouterModule} from '@angular/router';
-import {EditComponent} from './createEditUser/edit.component';
+import {EditComponent} from './editUser/edit.component';
+import { UsersComponent } from './users/users.component';
+import { NaviComponent } from './navi/navi.component';
+import { UserItemComponent } from './user-item/user-item.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
     LoginComponent,
     HomeComponent,
     SearchPipe,
-    EditComponent
+    EditComponent,
+    UsersComponent,
+    NaviComponent,
+    UserItemComponent
   ],
   imports: [
     BrowserModule,

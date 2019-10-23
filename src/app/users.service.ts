@@ -1,19 +1,18 @@
 
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {Injectable} from '@angular/core';
+import {User} from './app.component';
 import {map} from 'rxjs/operators';
 
 @Injectable()
 export class UsersService {
-  size = 8
+  users: [];
+  size = 8;
 
   constructor(private http: HttpClient) {
   }
 
   getUsers() {
-    return this.http.get('https://randomuser.me/api/?inc=gender,name,picture,location&results='+ this.size+'&nat=gb');
-  }
-  setSize(size) {
-    this.size = size;
+    this.http.get('https://randomuser.me/api/?inc=gender,name,picture,location&results=' + this.size + '&nat=gb').pipe(map(response => {return this.users}));
   }
 }

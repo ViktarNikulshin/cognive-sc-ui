@@ -1,28 +1,6 @@
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <div class="container blue">
-    <div class="row">
-      <div class="col-sm">
-        <h2>Service</h2>
-      </div>
-      <div class="col-sm">
-        <a routerLink="/">
-          <button type="button" class="btn btn-secondary btn-sm login float-right">Home</button>
-        </a>
-      </div>
-      <div class="col-sm">
-        <button type="button" class="btn btn-secondary btn-sm login float-right">User</button>
-      </div>
-      <div class="col-sm">
-        <a routerLink="/login">
-          <button type="button" class="btn btn-secondary btn-sm login float-right">Login</button>
-        </a>
-      </div>
-    </div>
+<app-navi></app-navi>
 
-  </div>
-</div>
-<!--Main-->
 <div class="content" role="main">
   <router-outlet></router-outlet>
 </div>

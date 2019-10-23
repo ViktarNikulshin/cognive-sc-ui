@@ -1,7 +1,14 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UsersService} from './users.service';
-export interface User {
-  id: number;
+import {map} from 'rxjs/operators';
+export class User {
+  constructor(public id: number,
+              public firstName: string,
+              public lastName: string,
+              public middleName: string,
+              public email: string,
+              public phoneNumber: string) {
+  }
 }
 
 @Component({
@@ -11,6 +18,10 @@ export interface User {
   providers: [UsersService]
 })
 
-export class AppComponent {
-
-}
+export class AppComponent implements OnInit{
+  public users: User [] ;
+  constructor(private userService: UsersService){}
+  ngOnInit() {
+    // this.userService.getUsers().subscribe((users) => {this.users = users['results'];
+    }
+ }
