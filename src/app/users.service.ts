@@ -5,9 +5,7 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class UsersService {
   users: [];
-  size = 8;
-
-  constructor(private http: HttpClient) {
+    constructor(private http: HttpClient) {
   }
 
   getUsers() {

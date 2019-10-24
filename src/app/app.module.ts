@@ -8,11 +8,11 @@ import {HomeComponent} from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {SearchPipe} from './search.pipe';
-import {RouterModule} from '@angular/router';
 import {EditComponent} from './editUser/edit.component';
 import { UsersComponent } from './users/users.component';
 import { NaviComponent } from './navi/navi.component';
 import { UserItemComponent } from './user-item/user-item.component';
+
 
 
 
