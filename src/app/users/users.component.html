@@ -1,12 +1,17 @@
 <div class="container">
   <div class="container add">
     <div class="row">
-      <div class="col-2">
-        <a [routerLink]="['/edit','0']">
-          <button type="button" class="btn btn-primary btn-lt btn-block">Add</button>
-        </a>
+        <div class="col-2">
+          <a [routerLink]="['/edit','0']">
+            <button type="button" class="btn btn-primary btn-lt btn-block">Add User</button>
+          </a>
+        </div>
+        <div class="col-2">
+          <a routerLink="">
+            <button type="button" class="btn btn-secondary btn-sm login float-right  pull-right">Add Role</button>
+          </a>
+        </div>
       </div>
-    </div>
   </div>
   <table class="table table-hover">
     <thead>
@@ -20,7 +25,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let u of users">
-      <td><a [routerLink]="['/edit', u.User.Id]" > {{u.User.Id}} </a></td>
+      <td><a [routerLink]="['/edit', u.User.Id]"> {{u.User.Id}} </a></td>
       <td>{{u.Profile.FirstName}}</td>
       <td>{{u.Profile.LastName}}</td>
       <td>{{u.Profile.Email}}</td>

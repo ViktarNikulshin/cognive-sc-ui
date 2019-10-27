@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UserService} from '../user.service';
 import {ActivatedRoute} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'edit-app',
@@ -11,9 +12,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 
 export class EditComponent implements OnInit {
-  user
-  userId = 2;
-  constructor(private userService: UserService, private route: ActivatedRoute) {
+  user = {};
+    constructor(private userService: UserService, private route: ActivatedRoute, private httpClient: HttpClient) {
     console.log(this.route.snapshot.params.Id);
   }
   ngOnInit() {
@@ -22,4 +22,7 @@ export class EditComponent implements OnInit {
       this.user = user;
     });
   }
+    pastData(){
+      return this.httpClient.post('', this.user).subscribe(response =>{console.log(response)});
+    }
 }
