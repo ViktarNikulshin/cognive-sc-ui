@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <a routerLink="">
+        <button type="button" class="btn btn-secondary btn-sm login float-right  pull-right">Add Role</button>
+      </a>
+    </div>
+  </div>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Название</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let r of roles">
+      <td><a> {{r.id}} </a></td>
+      <td>{{r.name}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

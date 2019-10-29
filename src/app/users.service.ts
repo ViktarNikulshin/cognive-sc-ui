@@ -4,11 +4,10 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class UsersService {
-  users: [];
-    constructor(private http: HttpClient) {
+     constructor(private http: HttpClient) {
   }
 
   getUsers() {
-   return  this.http.get('https://viktornikulshin.outsystemscloud.com/BD/rest/v1/users');
+   return  this.http.get('http://localhost:8080/user/users');
   }
 }

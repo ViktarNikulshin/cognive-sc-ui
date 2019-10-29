@@ -10,7 +10,7 @@ import {map} from 'rxjs/operators';
 })
 export class UsersComponent implements OnInit {
 
-  users;
+  users ;
 
   constructor(private userService: UsersService) {
   }
