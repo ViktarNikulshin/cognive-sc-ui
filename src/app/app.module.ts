@@ -7,7 +7,7 @@ import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import {SearchPipe} from './search.pipe';
+import {SearchPipe} from './pipe/search.pipe';
 import {EditComponent} from './editUser/edit.component';
 import { UsersComponent } from './users/users.component';
 import { NaviComponent } from './navi/navi.component';

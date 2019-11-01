@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from '../user.service';
+import {UserService} from '../service/user.service';
 import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {User} from '../models/user';
-import {async} from '@angular/core/testing';
+import {CountryService} from "../service/country.service";
 
 @Component({
   selector: 'edit-app',
@@ -18,8 +18,13 @@ export class EditComponent implements OnInit {
   user: User;
   userForm: FormGroup;
   id: number;
+  countrys;
 
-  constructor(private userService: UserService, private route: ActivatedRoute, private httpClient: HttpClient, private fb: FormBuilder) {
+  constructor(private userService: UserService,
+              private route: ActivatedRoute,
+              private httpClient: HttpClient,
+              private fb: FormBuilder,
+              private countryService: CountryService) {
     this.userForm = this.fb.group({
       login: [''],
       password: [''],
@@ -35,8 +40,13 @@ export class EditComponent implements OnInit {
       flat: [''],
     });
     this.id = this.route.snapshot.params.Id;
-      }
+  }
+
   ngOnInit() {
+    this.countryService.getAllCountry().subscribe(countrys => {
+      this.countrys = countrys;
+      console.log(this.countrys);
+    })
     console.log(this.id);
     if (this.id !== 0) {
       this.userService.getUser(this.route.snapshot.params.Id).subscribe(user => {
@@ -67,8 +77,6 @@ export class EditComponent implements OnInit {
   }
 
   postData() {
-    return this.httpClient.post('http://localhost:8080/user/create', this.user).subscribe(response => {
-      console.log(response);
-    });
+    console.log(this.user);
   }
 }
