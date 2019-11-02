@@ -1,12 +1,12 @@
 <div class="container">
-  <form [formGroup]="userForm" class="needs-validation">
+  <form [formGroup]="userForm" (ngSubmit)="postData()" class="needs-validation">
     <div class="form-row usId">
       <div class="col-md-12">
         <p>Идентификация</p>
       </div>
       <div class="col-md-4 mb-3">
         <label>Login</label>
-        <input type="text" name="username" class="form-control" placeholder="Login" formControlName="login"/>
+        <input type="text"   class="form-control" placeholder="Login" formControlName="login"/>
       </div>
       <div class="col-md-4 mb-3">
         <label>Password</label>
@@ -68,6 +68,6 @@
         <input type="number" class="form-control" formControlName="flat"/>
       </div>
     </div>
-    <button class="btn btn-primary" type="submit" (click)="postData()">Submit form</button>
+    <button class="btn btn-primary" type="submit">Submit form</button>
   </form>
 </div>

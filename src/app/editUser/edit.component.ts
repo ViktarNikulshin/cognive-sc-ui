@@ -40,8 +40,7 @@ export class EditComponent implements OnInit {
       flat: [''],
     });
     this.id = this.route.snapshot.params.Id;
-  }
-
+      }
   ngOnInit() {
     this.countryService.getAllCountry().subscribe(countrys => {
       this.countrys = countrys;
@@ -77,6 +76,6 @@ export class EditComponent implements OnInit {
   }
 
   postData() {
-    console.log(this.user);
+       console.log(this.userService.postUser(this.userForm.value));
   }
 }

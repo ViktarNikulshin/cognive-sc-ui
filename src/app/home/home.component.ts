@@ -1,19 +1,19 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UsersService} from '../service/users.service';
+import {UserService} from '../service/user.service';
 
 @Component({
   selector: 'home-app',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  providers: [UsersService]
+  providers: [UserService]
 })
   export class HomeComponent implements OnInit{
   users;
   searchStr = '';
   size;
 
-  constructor(private usersService: UsersService) {
-    this.usersService.getUsers();
+  constructor(private userService: UserService) {
+    this.userService.getUsers();
     console.log();
   }
   ngOnInit() {
