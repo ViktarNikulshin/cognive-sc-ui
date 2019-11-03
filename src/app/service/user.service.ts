@@ -21,6 +21,6 @@ export class UserService {
   }
   postUser(user: User) {
     console.log(user);
-    return  this.http.post('http://localhost:8080/user/update', user);
+    this.http.post('http://localhost:8080/user/update', user).subscribe();
   }
 }

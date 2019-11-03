@@ -21,6 +21,6 @@ export class LoginComponent {
   }
   checkLogin(){
     console.log(this.loginForm.value);
-    this.authenticationService.authenticate(this.loginForm.value.username, this.loginForm.value.password);
+    console.log(this.authenticationService.authenticate(this.loginForm.value));
   }
 }

@@ -26,6 +26,7 @@ export class EditComponent implements OnInit {
               private fb: FormBuilder,
               private countryService: CountryService) {
     this.userForm = this.fb.group({
+      id: [''],
       login: [''],
       password: [''],
       firstName: [''],
@@ -60,6 +61,7 @@ export class EditComponent implements OnInit {
   initForm() {
     console.log(this.user);
     this.userForm = this.fb.group({
+      id: [this.user.id],
       login: [this.user.login],
       password: [this.user.password],
       firstName: [this.user.firstName],
