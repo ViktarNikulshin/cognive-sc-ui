@@ -29,6 +29,7 @@ export class AuthenticationService {
   }
 
   logOut() {
+    sessionStorage.removeItem('token');
     sessionStorage.removeItem('username');
   }
 }

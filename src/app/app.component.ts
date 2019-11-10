@@ -6,13 +6,14 @@ import {Router} from '@angular/router';
 import {AuthenticationService} from './service/authentication.service';
 import {FormBuilder} from '@angular/forms';
 import {CountryService} from './service/country.service';
+import {NaviComponent} from './navi/navi.component';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [ UserService, RolesService, AuthenticationService, CountryService]
+  providers: [ UserService, RolesService, AuthenticationService, CountryService, NaviComponent]
 })
 
 export class AppComponent implements OnInit {

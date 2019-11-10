@@ -4,7 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {User} from '../models/user';
-import {CountryService} from "../service/country.service";
+import {CountryService} from '../service/country.service';
 
 @Component({
   selector: 'edit-app',
@@ -19,6 +19,7 @@ export class EditComponent implements OnInit {
   userForm: FormGroup;
   id: number;
   countrys;
+  isShowId = 'visible';
 
   constructor(private userService: UserService,
               private route: ActivatedRoute,
@@ -40,17 +41,20 @@ export class EditComponent implements OnInit {
       house: [''],
       flat: [''],
     });
-    this.id = this.route.snapshot.params.Id;
-      }
+  }
+
   ngOnInit() {
+    this.id = this.route.snapshot.params.Id;
     this.countryService.getAllCountry().subscribe(countrys => {
       this.countrys = countrys;
-      console.log(this.countrys);
-    })
+    });
     console.log(this.id);
-    if (this.id !== 0) {
+    if (this.id === 0) {
+      this.isShowId = 'visible';
+    } else {
       this.userService.getUser(this.route.snapshot.params.Id).subscribe(user => {
         this.user = user;
+        this.isShowId = 'hidden';
         this.initForm();
       });
     }
@@ -78,6 +82,6 @@ export class EditComponent implements OnInit {
   }
 
   postData() {
-       console.log(this.userService.postUser(this.userForm.value));
+    console.log(this.userService.postUser(this.userForm.value));
   }
 }

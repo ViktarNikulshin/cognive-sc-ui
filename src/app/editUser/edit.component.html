@@ -6,9 +6,9 @@
       </div>
       <div class="col-md-4 mb-3">
         <label>Login</label>
-        <input type="text"   class="form-control" placeholder="Login" formControlName="login"/>
+        <input type="text"  class="form-control" placeholder="Login" formControlName="login"/>
       </div>
-      <div class="col-md-4 mb-3">
+      <div class="col-md-4 mb-3" [ngClass]="isShowId">
         <label>Password</label>
         <input type="password" name="password" class="form-control" placeholder="Password"
                formControlName="password"/>
@@ -17,7 +17,7 @@
     <div class="form-row">
       <br>
       <div class="col-md-12">
-        <p>Личные данные</p>
+        <p>Личные данные </p>
       </div>
       <div class="col-md-4 mb-3">
         <label>Фамилия</label>
